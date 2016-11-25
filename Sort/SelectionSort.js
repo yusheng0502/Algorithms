@@ -5,18 +5,22 @@ console.log(numbers);
 function SelectionSort(input) {
     for (var i = 0; i < input.length - 1; i++) {
         var minIndex = findMinIndex(input, i);
-        swap(input, i, min);
+        console.log("Find min number is " + input[minIndex] + ". " + "Index is " + minIndex);
+
+        swap(input, i, minIndex);
+        console.log("Result : " + numbers);
     };
 }
 
 function findMinIndex(input, start) {
-    var minIndex;
+    var minIndex = start;
     for (j = start; j <= input.length - 1; j++) {
         if (input[j + 1] < input[j]) {
-            min = j + 1;
+            minIndex = j + 1;
         };
     }
-    console.log("Find min number is " + input[min] + ". " + "Index is " + min);
+
+    return minIndex
 }
 
 function swap(input, a, b) {
