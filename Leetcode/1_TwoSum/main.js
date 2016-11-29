@@ -5,14 +5,14 @@
  */
 var twoSum = function (nums, target) {
     var map = [];
-    for (var i = 0; i <= nums.length - 1; i++) {
-        map[nums[i]] = i;
-    }
 
     for(var i=0; i<=nums.length-1;i++){
         var result = map[target-nums[i]]
-        if( result != undefined && result != i){
+        if( result != undefined){
             return [i,result];
+        }
+        else{
+            map[nums[i]] = i;
         }
     }
 
