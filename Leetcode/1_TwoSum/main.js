@@ -4,16 +4,19 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-
+    var map = [];
     for (var i = 0; i <= nums.length - 1; i++) {
-        var result = nums.indexOf(target - nums[i], i + 1);
-        if (result !== -1) {
-            return [i, result];
+        map[nums[i]] = i;
+    }
+
+    for(var i=0; i<=nums.length-1;i++){
+        var result = map[target-nums[i]]
+        if( result != undefined && result != i){
+            return [i,result];
         }
     }
 
-    return null;
-
+    return undefined;
 };
 
 var input = [3, 2, 4];
